@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     public Button moveButtonR;
     public Button moveButtonL;
     public Transform[] positions;
-    private int currentPositionIndex = 0;
+    public int currentPositionIndex = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +45,8 @@ public class CameraController : MonoBehaviour
         else if (currentPositionIndex == 0)
         {
             currentPositionIndex = 3;
+            cameraToMove.transform.position = positions[currentPositionIndex].position;
+            cameraToMove.transform.rotation = positions[currentPositionIndex].rotation;
 
         }
     }
